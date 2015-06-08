@@ -13,7 +13,12 @@ body {
     width: 60%; margin: 0 auto; border: thin solid white; padding-left: 20px;
 }
 
+.yoda {
+    background-color: #ffbf80;
+}
+
+
 .luke {
-    background-color: purple
+    background-color: purple;
 }
 
