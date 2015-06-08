@@ -1,0 +1,19 @@
+html,
+body {
+    margin: 0px;
+    color: #333;
+    background-color: #ffff80;
+}
+
+body {
+    padding: 100px;
+}
+
+.yoda {
+    width: 60%; margin: 0 auto; border: thin solid white; padding-left: 20px;
+}
+
+.luke {
+    background-color: purple
+}
+
