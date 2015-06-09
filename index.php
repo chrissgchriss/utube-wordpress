@@ -4,7 +4,7 @@
     <div class="col-xs-12 col-sm-8">
         <?php
             if( have_posts() ):
-                while(have_posts() ) : the_post(); echo 'THIS IS THE FORMAT: '.get_post_format(); ?>
+                while(have_posts() ) : the_post(); echo 'THIS IS INDEX.php THE FORMAT: '.get_post_format(); ?>
                 <!-- took everything out of here and put it in content.php -->
                 <?php get_template_part('content', get_post_format()); ?>
             <?php endwhile;

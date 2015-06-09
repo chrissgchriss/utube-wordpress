@@ -1,0 +1,72 @@
+The query post is a function which wp calls by itself.
+Editing the query post allows us to generate the content when ever we want.
+What if we only want the most revient or only 3 or 4 post returned or just post in a specific category?
+
+if we use WP_Query, we create a new query that does not touch the main Query_Post Loop of WP.
+
+We create an empty query without destroying the main loop.
+
+The query can access any element that is in the database and return that like any mySQL Query.
+
+
+INJECTION video 9 14:36/29:56
+
+$lastBost = new WP_Query(type=post&post_per-page=1);
+A standard php thing is to inject -> what we have created into a function/
+
+$lastBlog->have_post()
+
+note that he switched from index.php to page-home.php to demonstrate the difference/
+
+There WP_QUERY and GET POST FUNCTION
+
+To edit the home page you need to create another file so WP can access the page
+create:
+
+page-home
+
+remember you can create a slug page or id of the page
+
+OK REMEMBER THIS.
+
+We want to create seperate querys on the HOME page. Perviously, the home page was accessed by WP through
+index.php (common sense) BUT WP also is a framework which will look for slugs ( which are urls of the
+page in question) and if that slug exists - will show that page instead. So  the slug to the home page is:
+Permalink: http://modrakin.com/awesome/home/
+and if you create a new file called
+page-home.php
+
+the wp framework will get page-home.php and use that page instead of HTML.
+
+so we are going to use page-home.php to make our three queries to the database to display
+three results.
+
+on page-home:
+1. Just return one post.
+2. Return Two Post, minus the first post.
+3. Return only post with Category named News.
+
+and seperately: on our BLOG.php page ( created in the admin area --- not via text editor and FTP ) we are
+leaving the original WP_Query to default,
+
+Ok?
+Class that calls a function and injects a specific instance of that class. 12:34/29:56 Video 9
+
+
+////Lesson 10///////
+Styling.
+We want to get some different styles for the top three post we are returning on page-home.php
+
+We can put our style directly into the loop. Or create a template to surround what is inside the loop/
+
+if():
+while():the_post();
+
+
+<?php get_template_part('content', get_post_format() ); ?>
+
+
+<?php
+endwhile:
+endif;
+?>
