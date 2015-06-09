@@ -58,7 +58,7 @@
              width="<?php echo get_custom_header()->width; ?>"
             alt=""
             />
-        
+           
  
   
   
