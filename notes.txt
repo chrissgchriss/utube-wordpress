@@ -70,3 +70,56 @@ while():the_post();
 endwhile:
 endif;
 ?>
+
+
+We are going to put all our mark up in another file called content-featured.php
+so we need to change the markup to featured, WP FRAMEWORK will know how to attach this...( see video 7)
+<?php get_template_part('content', featured ); ?>
+
+So in the content-featured.php we can customize the presentation of our FEATURED POST!
+
+copy stuff from content.php into content-featured.php
+
+This makes sense, because content.php is the fallback, the default if there is no
+option after that mark up - and this is the standard, the default when a user creates a
+new post and does not select any of the others we might have activated. ( image ... etc )
+
+OK...
+If I want to limit the categories which show up, because wp selects the latest categories
+no matter what the category it is in, even uncategorized. How do we filter out certain
+categories? THis is not the same as including a category, because you want to have ALL
+CATEGORIES show up except for a certain one. Like maybe you want to fileter articles about
+SEX, if you have a wp site for kids?
+
+$args = array(
+                'type' => 'post',
+                'posts_per_page' => 3,
+                'category__in' => array(7,8,9), // sometimes customers select multiple categories 7,10,1 ?
+                'category__not_in' => array(1,10), // not_in does not display these categories even if selected
+
+Ok, How do you just display the last blog post of each category.
+I want to recall one single post of each category - even if there are more than one post in this category.
+
+OK, you have to think like mySQL the GROUP BY and HAVING functions, but do it in WP Template
+$args = array(
+                'type' => 'post',
+                'posts_per_page' => 3,
+                'category__in' => array(7,8,9),
+                'category__not_in' => array(1,10),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
